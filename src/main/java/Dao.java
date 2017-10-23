@@ -19,9 +19,6 @@ abstract class Dao {
         }
 
         return sb.toString();
-
-
-
     }
 
 
@@ -32,14 +29,21 @@ abstract class Dao {
         c.prepareStatement(query);
         */
 
-
     }
 
 
-    public void select() {
-        StringBuffer ss = new StringBuffer("SELECT* FROM ");
-                    ss.append(this.getClass().getSimpleName());
-                    //log.info(ss.toString());
+    public String selectTrack(String title) {
+        StringBuffer ss = new StringBuffer("SELECT ");
+        try{
+            ss.append(this.getClass().getSimpleName());
+
+            log.info(ss.toString());
+        }
+        catch (Exception e){
+            log.fatal(e.getMessage());
+        }
+        return ss.toString();
+
     }
 
     public void update() {

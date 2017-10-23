@@ -19,9 +19,9 @@ public class Test1 {
         s.setName("Arthur");
         s.setBand("metalica");
         s.setBirthYear(1990);
+
         t.setTitle("hand on the wind");
         t.setSinger("metalica2");
-
 
     }
 
@@ -42,7 +42,20 @@ public class Test1 {
     public void getInsertQueryTest(){
 
         assertEquals("INSERT INTO Singer",s.getInsertQuery());
-        assertEquals("Hola", s.getInsertQuery());
+        assertEquals("INSERT INTO Track", t.getInsertQuery());
+    }
+
+    @Test
+    public void selectTest(){
+
+        Singer selSinger = new Singer();
+        Track selTrack = new Track();
+
+
+        assertEquals("SELECT FROM Singer",t.selectTrack("hand on the wind"));
+
+
+
     }
 
 
