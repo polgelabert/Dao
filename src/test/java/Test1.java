@@ -42,6 +42,7 @@ public class Test1 {
     public void getInsertQueryTest(){
 
         assertEquals("INSERT INTO Singer",s.getInsertQuery());
+        assertEquals("Hola", s.getInsertQuery());
     }
 
 

@@ -7,14 +7,18 @@ abstract class Dao {
     final static Logger log = Logger.getLogger(Dao.class);
 
     public String getInsertQuery() {
-
         StringBuffer sb = new StringBuffer("INSERT INTO ");
-        sb.append(this.getClass().getSimpleName());
 
-        log.info(sb.toString());
+        try{
+            sb.append(this.getClass().getSimpleName());
+            log.info(sb.toString());
+
+        }
+        catch(Exception e){
+            log.fatal(e.getMessage());
+        }
 
         return sb.toString();
-
 
 
 
