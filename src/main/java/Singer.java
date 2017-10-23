@@ -4,6 +4,10 @@ public class Singer extends Dao{
     String band;
     int birthYear;
 
+    public Singer(){
+
+    }
+
     public Singer(String name, String band, int birthYear)  {
         this.setName(name);
         this.setBand(band);
@@ -23,6 +27,7 @@ public class Singer extends Dao{
     public void setBirthYear(int birthYear) { this.birthYear = birthYear; }
 
     public static void main (String[] args) {
+        org.apache.log4j.BasicConfigurator.configure();
 
         Singer s = new Singer ("the title", "the singer", 1960);
         s.insert();

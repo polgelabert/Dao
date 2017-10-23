@@ -6,11 +6,14 @@ abstract class Dao {
 
     final static Logger log = Logger.getLogger(Dao.class);
 
-    private void getInsertQuery() {
-     StringBuffer sb =new StringBuffer("INSERT INTO ");
-     sb.append(this.getClass().getSimpleName());
+    public String getInsertQuery() {
 
-     log.info(sb.toString());
+        StringBuffer sb = new StringBuffer("INSERT INTO ");
+        sb.append(this.getClass().getSimpleName());
+
+        log.info(sb.toString());
+
+        return sb.toString();
 
 
 
@@ -19,7 +22,7 @@ abstract class Dao {
 
 
     public void insert() {
-        String query =getInsertQuery();
+       // String query =getInsertQuery();
        /* Connection c = getConnection();
 
         c.prepareStatement(query);
